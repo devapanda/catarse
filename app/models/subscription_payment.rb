@@ -2,6 +2,8 @@ class SubscriptionPayment < ApplicationRecord
   include Shared::CommonWrapper
 
   self.table_name = 'common_schema.catalog_payments'
+  self.primary_key = :id
+
   belongs_to :user, primary_key: :common_id
   belongs_to :project, primary_key: :common_id
   belongs_to :reward, primary_key: :common_id

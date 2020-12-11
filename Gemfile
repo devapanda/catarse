@@ -8,7 +8,7 @@ gem 'auto_html', '2.0.0'
 gem 'bootsnap', '1.5.1', require: false
 gem 'browser', '5.1.0'
 gem 'carrierwave', '2.1.0'
-gem 'catarse_pagarme', '3.0.0'  #, path: '../catarse_pagarme'
+gem 'catarse_pagarme', '3.0.1'  #, path: '../catarse_pagarme'
 gem 'catarse_settings_db', '0.2.0'
 gem 'concurrent-ruby', '1.1.7'
 gem 'countries', '3.0.1'
