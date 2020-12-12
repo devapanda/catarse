@@ -255,12 +255,12 @@ class ProjectsController < ApplicationController
 
       flash[:notice] = t("projects.#{action_name}")
       if success_redirect
-        redirect_to edit_project_path(@project, anchor: success_redirect, locale: '')
+        redirect_to edit_project_path(@project, anchor: success_redirect, locale: nil)
       else
         if show_modal
-          redirect_to insights_project_path(@project, online_succcess: true, locale: '')
+          redirect_to insights_project_path(@project, online_succcess: true, locale: nil)
         else
-          redirect_to insights_project_path(@project, locale: '')
+          redirect_to insights_project_path(@project, locale: nil)
         end
       end
     else
@@ -306,9 +306,9 @@ class ProjectsController < ApplicationController
 
   def redirect_after_create(project)
     if project.is_sub?
-      redirect_to edit_project_path(project, locale: '', anchor: 'start')
+      redirect_to edit_project_path(project, locale: nil, anchor: 'start')
     else
-      redirect_to insights_project_path(project, locale: '')
+      redirect_to insights_project_path(project, locale: nil)
     end
   end
 
