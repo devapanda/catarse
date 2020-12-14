@@ -106,7 +106,7 @@ class UsersController < ApplicationController
       cover_image: params[:cover_image]
     }
 
-    if @user.update_without_password permitted_params
+    if @user.update_without_password permitted_params.except(:current_password)
       @user.reload
       render status: 200, json: {
         uploaded_image: @user.uploaded_image.url(:thumb_avatar),
@@ -162,7 +162,7 @@ class UsersController < ApplicationController
         sign_in(@user, bypass: true)
       end
     else
-      @user.update_without_password permitted_params
+      @user.update_without_password permitted_params.except(:current_password)
     end
   end
 
